@@ -1,0 +1,50 @@
+---
+---
+
+<div class="relative w-full flex flex-col gap-4 h-auto min-h-[200px] rounded-xl bg-slate-900 text-white p-5">
+    <div class="title-card"> Categorías  </div>
+    <h4 class="font-bold text-4xl">Categorías más usadas</h4>
+    <div class="categoryCard-1"></div>
+    <div class="categoryCard-2"></div>
+</div>
+
+<style>
+     .title-card{
+        position: relative;
+        font-weight: bold;
+        line-height: 35px;
+        padding-left:40px;
+     }
+     .title-card::before{
+        content:"";
+        position: absolute;
+        top: 0;
+        left:0;
+        width:35px;
+        height:35px;
+        background-color:#fff;
+        border-radius: 5px;
+     }
+
+     .categoryCard-2{
+        position: absolute;        
+        height: 150px;
+        border-radius: 1.25rem;
+        bottom:10px;
+        left:5px;
+        right:5px;
+        background-color:#a031b3;
+        z-index: 2;
+     }
+    .categoryCard-1{
+        content:"";
+        position: absolute;
+        bottom: 80px;
+        left: calc(50% - 60px);
+        width:120px;
+        height:120px;       
+        border-radius: 1.25rem;
+        z-index: 1;
+        background-color:#561362;
+    }
+</style>

@@ -1,0 +1,17 @@
+--- 
+const isLogged = true
+---
+
+<nav class="text-white p-5 bg-slate-900 flex flex-row justify-between">
+    <div class="font-bold text-base">Markverso Bento</div>
+    <ul class="nav-links">
+        
+    </ul>
+    <div class="flex flex-row">
+        <label>
+            Modo Oscuro 
+            <input type="checkbox" class="hidden" />
+        </label>
+        {isLogged && <div class="font-bold text-base"> Bloidev</div>}
+    </div>
+</nav>

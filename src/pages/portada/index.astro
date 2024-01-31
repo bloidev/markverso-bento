@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FotoA from '../../components/FotoA.astro';
+import TwitchCard from '../../components/TwitchCard.astro'
+import Advertising from '../../components/AdvertisingCard.astro'
+import AboutMe from '../../components/AboutMe.astro'
+import NickCard from '../../components/NickCard.astro'
+import CategoryCard from '../../components/CategoryCard.astro'
+import FotoB from '../../components/FotoB.astro'
+import FotoC from '../../components/FotoC.astro'
+import SponsorCard from '../../components/SponsorCard.astro'
+
+---
+
+<Layout title="markverso bento">
+	<article class="grid grid-cols-12 gap-4 w-full sm:w-7/12 mx-auto p-5">
+		<div class="col-span-4 grid grid-cols-1 gap-4 w-full">
+		  <FotoA />
+		  <AboutMe />		  
+		</div>
+		<div class="col-span-6 grid grid-cols-2 gap-3">
+			<TwitchCard />
+			<Advertising />
+			<NickCard /> 
+		</div>
+		<div class="col-span-2 flex flex-row flex-wrap gap-4 w-full">
+			<CategoryCard />
+			<FotoB />
+		</div>
+	</article>
+	<article class="grid grid-cols-2 gap-4 w-full sm:w-7/12 mx-auto pl-5 pb-5 pr-5">
+		<SponsorCard />
+		<FotoC />
+	</article>
+</Layout>
+ 

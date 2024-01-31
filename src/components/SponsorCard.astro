@@ -1,0 +1,24 @@
+---
+
+const list = [
+    "Empresa A",
+    "Empresa B",
+    "Empresa C",
+    "Empresa D",
+    "Empresa E"
+]
+---
+
+<div class="relative w-full h-48 rounded-xl bg-slate-900 text-white p-5">
+    <h4 class="text-2xl font-bold">Auspiciadores</h4>
+    <hr class="max-w-[50px] border-y-4 rounded-xl my-2 border-green-600"/>
+    <ul class="flex flex-row justify-center items-center gap-4">
+        {list.map((item) => {
+            return <li class="bg-slate-950 p-3 rounded-xl">{item}</li>
+        })}        
+    </ul>
+</div>
+
+<style>
+     
+</style>
