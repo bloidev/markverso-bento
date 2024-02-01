@@ -1,9 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro'; 
 import Navbar from '../components/navigation/Navbar.astro'
+
+import { SignIn, SignOut } from 'auth-astro/components'
+import { getSession } from 'auth-astro/server';
+
+const session = await getSession(Astro.request);
+
 ---
 
 <Layout title="markverso bento">
 	 <Navbar />
+	 <main class="text-white p-5">
+	 <hr />
+	 <h1></h1>
+	 {session ? (
+		<p class="text-3xl text-white">Welcome {session.user?.name}</p>
+		<SignOut class="bg-red-200 p-3 text-slate-900">Cerrar Sesión</SignOut>
+	 )  : (
+	 	<SignIn provider="twitch" class="bg-slate-100 p-3 text-slate-900">Twitch</SignIn>
+		 <SignIn provider="github" class="bg-slate-100 p-3 text-slate-900">Github</SignIn>
+		<p>Not logged in</p>
+	 )}	 
+	 </main>
 </Layout>
  

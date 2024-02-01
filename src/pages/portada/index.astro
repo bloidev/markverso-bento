@@ -9,10 +9,12 @@ import CategoryCard from '../../components/CategoryCard.astro'
 import FotoB from '../../components/FotoB.astro'
 import FotoC from '../../components/FotoC.astro'
 import SponsorCard from '../../components/SponsorCard.astro'
-
+import Navbar from '../../components/navigation/Navbar.astro';
+ 
 ---
 
-<Layout title="markverso bento">
+<Layout title="markverso bento"> 
+	<Navbar />
 	<article class="grid grid-cols-12 gap-4 w-full sm:w-7/12 mx-auto p-5">
 		<div class="col-span-4 grid grid-cols-1 gap-4 w-full">
 		  <FotoA />
