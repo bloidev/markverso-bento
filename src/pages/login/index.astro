@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+import { SignIn, SignOut } from 'auth-astro/components'
+import { getSession } from 'auth-astro/server'; 
+const session = await getSession(Astro.request);
+const redirect = Astro.redirect;
+  
+if(session){
+    console.log(session)
+    return redirect('/portada');    
+}
+---
+
+<Layout title="">    
+    <div class="flex flex-row justify-center items-center h-screen">
+        <div class="rounded bg-slate-100 min-w-[300px] min-h-[300px] p-5">
+            <h4 class="text-center font-bold text-3xl">Iniciar Sesión</h4>
+            <p>
+                Loren ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div class="flex flex-row gap-5 justify-center">
+                {!session ? (                                          
+                    <SignIn provider="twitch" class="rounded bg-purple-600 p-3 text-purple-100">Twitch</SignIn>
+                    <SignIn provider="github" class="rounded bg-gray-600 p-3 text-gray-100">Github</SignIn>
+                    <SignIn provider="google" class="rounded bg-red-600 p-3 text-red-100">Google</SignIn>           
+                 ) : <div></div>}	 
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<script>    
+</script>

@@ -3,22 +3,21 @@ import { SignIn, SignOut } from 'auth-astro/components'
 import { getSession } from 'auth-astro/server'; 
 const session = await getSession(Astro.request);
 
+import ToggleTheme from '../ToggleTheme';
+
 ---
 
-<nav class="text-white p-5 bg-slate-900 flex flex-row justify-between">
+<nav class="text-slate-900 dark:text-slate-100 p-5 bg-slate-100 dark:bg-slate-900 flex flex-row justify-between transition-colors">
     <div class="font-bold text-base">Markverso Bento</div>
     <ul class="nav-links">
         
     </ul>
-    <div class="flex flex-row gap-2"> 
-        {session ? (
-            <p class="text-base text-white">Welcome {session.user?.name}</p>
-            <SignOut class="text-red-500 hover:text-red-900">Cerrar Sesión</SignOut>
-         )  : (          
-            <span>Iniciar sesión con   </span>  
-            <SignIn provider="twitch" class="rounded bg-slate-100 p-1 text-slate-900">Twitch</SignIn>
-            <SignIn provider="github" class="rounded bg-slate-100 p-1 text-slate-900">Github</SignIn>
-            <SignIn provider="google" class="rounded bg-slate-100 p-1 text-slate-900">Google</SignIn>           
+    <div class="flex flex-row gap-2 items-center"> 
+        <ToggleTheme client:load/>
+        {session ? ( 
+            <SignOut class="p-3 bg-red-700 rounded">Cerrar Sesión</SignOut>
+         )  : (                      
+            <a href="/login" class="p-3 bg-purple-700 rounded">Iniciar sesión</a> 
          )}	 
     </div>
 </nav>
